@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Details</title>
+<style>
+body {
+    font-family: Arial;
+    margin:0;
+    background:#f4f6f8;
+
+}
+/* Header */
+header {
+    background:#002b5c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* Navigation */
+nav {
+    background:#00509e;
+
+    padding:10px;
+    text-align:center;
+}
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+/* Form Container */
+.container {
+
+    width:50%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+/* Sections */
+.section {
+    width:80%;
+    margin:20px auto;
+
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+/* Inputs */
+label { font-weight:bold; }
+input, select {
+    width:100%;
+    padding:10px;
+    margin:8px 0 15px 0;
+    border-radius:5px;
+
+    border:1px solid #ccc;
+}
+/* Table */
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+th {
+    background:#00509e;
+    color:white;
+}
+
+th, td {
+    padding:10px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+/* Button */
+button {
+    background:#00509e;
+    color:white;
+    padding:10px;
+    border:none;
+
+    width:100%;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover {
+    background:#003f7f;
+}
+/* Attendance Box */
+.attendance-box {
+    background:#f1f7ff;
+    padding:15px;
+
+    border-radius:6px;
+    margin-top:20px;
+    text-align:center;
+}
+</style>
+<script>
+function markAttendance() {
+    let now = new Date();
+    let date = now.toLocaleDateString();
+    let time = now.toLocaleTimeString();
+    document.getElementById("status").innerHTML =  "✔ Attendance Marked <br>Date: " + date + "<br>Time: " + time;
+
+}
+</script>
+</head>
+<body>
+<header>
+<h1>UCEV Hostel</h1>
+<p>University College of Engineering Villupuram</p>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="foodmenu.html">Food Menu</a>
+
+<a href="feepayment.html">Fees & Payment</a>
+<a href="student.html">Student Details</a>
+<a href="contact.html">Contact</a>
+<a href="ratings.html">Ratings</a>
+</nav>
+<!-- FORM WITH BIOMETRIC -->
+<div class="container">
+<h2 style="text-align:center;">Student Details Form</h2>
+<form>
+<label>Student Name</label>
+<input type="text">
+
+<label>Register Number</label>
+<input type="text">
+<label>Department</label>
+<select>
+<option>CSE</option>
+<option>ECE</option>
+<option>EEE</option>
+<option>MECH</option>
+<option>CIVIL</option>
+</select>
+<label>Year</label>
+<select>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+<label>Room Number</label>
+<input type="text">
+<label>Phone Number</label>
+<input type="text">
+<label>Address</label>
+<input type="text">
+
+<!-- BIOMETRIC INSIDE FORM -->
+<div class="attendance-box">
+<h3>Biometric Attendance</h3>
+<p>Click below to mark attendance</p>
+<button type="button" onclick="markAttendance()">Mark Attendance</button>
+<p id="status"></p>
+</div>
+</form>
+</div>
+<!-- STUDENT TABLE -->
+<div class="section">
+<h2>Student Records</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Register No</th>
+<th>Department</th>
+<th>Year</th>
+</tr>
+<tr>
+<td>Arun</td>
+<td>21CSE001</td>
+<td>CSE</td>
+
+<td>3rd Year</td>
+</tr>
+<tr>
+<td>Priya</td>
+<td>21ECE010</td>
+<td>ECE</td>
+<td>3rd Year</td>
+</tr>
+<tr>
+<td>Karthik</td>
+<td>22EEE015</td>
+<td>EEE</td>
+<td>2nd Year</td>
+</tr>
+<tr>
+<td>Divya</td>
+<td>23MECH020</td>
+<td>MECH</td>
+<td>1st Year</td>
+</tr>
+</table>
+</div>
+<!-- HOSTEL STATISTICS -->
+
+<div class="section">
+<h3>Hostel Statistics</h3>
+<p><b>Total Students:</b> 250</p>
+<p><b>Boys:</b> 150</p>
+<p><b>Girls:</b> 100</p>
+<p><b>Total Rooms:</b> 120</p>
+</div>
+<!-- OUR DETAILS -->
+<div class="section">
+<h3>Our Details</h3>
+<p><b>Hostel Name:</b> UCEV Hostel</p>
+<p><b>Location:</b> Villupuram</p>
+<p><b>Warden:</b> Mr. Kumar</p>
+<p><b>Contact:</b> 9876543210</p>
+<p><b>Email:</b> ucevhostel@gmail.com</p>
+</div>
+</body>
+</html>

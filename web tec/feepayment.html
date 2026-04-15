@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fees & Payment</title>
+<style>
+body {
+    font-family: Arial;
+    margin:0;
+
+    background:#f4f6f8;
+}
+/* Header */
+header {
+    background:#002b5c;
+
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* Navigation */
+
+nav {
+    background:#00509e;
+    padding:10px;
+    text-align:center;
+}
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Container */
+.container {
+    width:50%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+/* Labels */
+label {
+    font-weight:bold;
+}
+/* Inputs */
+input, select {
+    width:100%;
+    padding:10px;
+    margin:8px 0 15px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+/* Fee section */
+
+.fee-box {
+    background:#f1f7ff;
+    padding:15px;
+    border-radius:6px;
+}
+/* Total */
+
+.total-box {
+    margin-top:15px;
+    padding:15px;
+    background:#dfefff;
+    font-weight:bold;
+    text-align:center;
+    border-radius:6px;
+
+}
+/* Button */
+button {
+    background:#00509e;
+    color:white;
+    padding:12px;
+    border:none;
+    width:100%;
+
+    margin-top:15px;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover {
+    background:#003f7f;
+
+}
+</style>
+<script>
+function calculateTotal() {
+    let hostel = document.getElementById("hostel").checked ? 17800 : 0;
+    let mess = document.getElementById("mess").checked ? 12000 : 0;
+    let total = hostel + mess;
+    document.getElementById("total").innerText = "Total Amount: ₹ " + total;
+
+}
+function payNow() {
+    alert("Redirecting to GPay / Online Payment...");
+}
+</script>
+</head>
+
+<body>
+<header>
+<h1>UCEV Hostel</h1>
+<p>University College of Engineering Villupuram</p>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="foodmenu.html">Food Menu</a>
+
+<a href="feepayment.html">Fees & Payment</a>
+<a href="student.html">Student Details</a>
+<a href="contact.html">Contact</a>
+<a href="ratings.html">Ratings</a>
+</nav>
+<div class="container">
+<h2 style="text-align:center;">Student Fee Payment</h2>
+<form>
+<label>Student Name</label>
+
+<input type="text" required>
+<label>Register Number</label>
+<input type="text" required>
+<label>Department</label>
+
+<select required>
+<option value="">Select</option>
+<option>CSE</option>
+<option>ECE</option>
+<option>EEE</option>
+<option>MECH</option>
+<option>CIVIL</option>
+</select>
+<label>Year</label>
+
+<select required>
+<option value="">Select</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+<label>Address</label>
+<input type="text" required>
+<!-- Fee Selection -->
+
+<div class="fee-box">
+<h3>Select Fee Type</h3>
+
+<label>
+<input type="checkbox" id="hostel" onclick="calculateTotal()">
+ Hostel Fee (₹17,800)
+</label><br><br>
+<label>
+<input type="checkbox" id="mess" onclick="calculateTotal()">
+ Mess Fee (₹12,000)
+</label>
+<div class="total-box" id="total">
+Total Amount: ₹ 0
+
+</div>
+</div>
+<!-- Payment Options -->
+<div class="fee-box">
+<h3>Select Payment Method</h3>
+<label>
+<input type="radio" name="payment" value="GPay"> Google Pay (GPay)
+</label><br><br>
+<label>
+<input type="radio" name="payment" value="PhonePe"> PhonePe
+</label><br><br>
+<label>
+
+<input type="radio" name="payment" value="Paytm"> Paytm
+</label><br><br>
+<label>
+<input type="radio" name="payment" value="NetBanking"> Net Banking
+</label>
+</div>
+<button type="button" onclick="payNow()">Proceed to Pay (GPay)</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>UCEV Hostel</title>
+<style>
+body {
+    font-family: Arial;
+    background-color: #f4f6f8;
+    margin: 0;
+}
+/* Header */
+header {
+    background-color: #002b5c;
+    color: white;	
+
+    text-align: center;
+    padding: 25px;
+}
+/* Menu links */
+.menu a {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background: #00509e;
+    color: white;
+    text-decoration: none;
+    width: 200px;
+
+    border-radius: 4px;
+}
+.menu a:hover {
+    background: #003f7f;
+}
+section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 6px;
+
+}
+h2 {
+    color: #002b5c;
+}
+/* About Hostel Layout */
+.about-container {
+    display: flex;
+    gap: 20px;
+}
+/* Left Content */
+.about-content {
+    width: 65%;
+}
+
+.hostel-images img {
+    width: 180px;
+    height: 120px;
+    margin: 6px;
+    border-radius: 5px;
+}
+/* Feedback */
+.feedback textarea {
+    width: 95%;
+
+    height: 60px;
+}
+.feedback button {
+    margin-top: 6px;
+    padding: 6px 12px;
+    background: #00509e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* 🔔 ATTENTION-GRABBING NOTIFICATION */
+.notifications {
+    width: 35%;
+    background: linear-gradient(135deg, #fff3cd, #ffeeba);
+
+    border: 3px solid #ffc107;
+    padding: 15px;
+    box-shadow: 0 0 15px #ffcc00;
+    animation: blinkBox 1.2s infinite;
+}
+/* Bell animation */
+.notifications h3::before {
+    content: "🔔 ";
+
+    animation: bell 0.6s infinite;
+}
+/* Blink animation */
+@keyframes blinkBox {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+/* Bell shake */
+@keyframes bell {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+
+}
+.notifications h3 {
+    text-align: center;
+    color: #856404;
+    background: #ffeeba;
+    padding: 6px;
+    border-radius: 4px;
+
+}
+.notifications ul {
+    font-weight: bold;
+}
+/* Popup */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #fff3cd;
+    border-left: 6px solid #ffc107;
+    padding: 15px;
+    width: 280px;
+    display: none;
+    box-shadow: 0 0 12px gray;
+}
+
+.popup button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    float: right;
+
+    cursor: pointer;
+}
+footer {
+    background: #002b5c;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+</style>
+</head>
+<body onload="showNotification()">
+<header>
+    <h1>University College of Engineering Villupuram</h1>
+    <p>Affiliated to Anna University, Chennai</p>
+    <p>UCEV Hostel Management System</p>
+</header>
+<section>
+
+    <h2>Menu</h2>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="foodmenu.html">Food Menu</a>
+        <a href="feepayment.html">Fee Payment</a>
+
+        <a href="student.html">Student Details</a>
+        <a href="ratings.html">Ratings</a>
+    </div>
+</section>
+<section>
+    <h2>About Hostel</h2>
+    <div class="about-container">
+        <!-- Left -->
+        <div class="about-content">
+            <p>
+                UCEV Hostel provides a secure and peaceful environment with hygienic food, Wi-Fi, and 24/7 surveillance.
+            </p>
+            <div class="hostel-images">
+                <img src="images/girlshostel.jpeg">
+                <img src="images/boyshostel.jpeg">
+            </div>
+            <div class="feedback">
+                <h3>Student Feedback</h3>
+
+                <textarea placeholder="Write your feedback..."></textarea><br>
+                <button>Submit</button>
+            </div>
+        </div>
+
+        <!-- Right Notifications -->
+        <div class="notifications">
+            <h3>Important Updates</h3>
+            <ul>
+                <li>Hostel fee deadline: 30 March</li>
+                <li>Mess menu updated</li>
+                <li>Room inspection next week</li>
+                <li>Water maintenance on Friday</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Contact Details</h2>
+    <p>
+        UCEV Hostel Office<br>
+        Villupuram, Tamil Nadu – 605103<br>
+        Phone: +91 98765 43210<br>
+        Email: ucevhostel@gmail.com	
+
+    </p>
+</section>
+<!-- Popup Notification -->
+
+<div class="popup" id="notify">
+    <button onclick="closePopup()">X</button>
+    <h3>🔔 New Notification</h3>
+    <p>Fee deadline and mess updates available.</p>
+</div>
+<footer>
+    © 2026 UCEV Hostel
+</footer>
+<script>
+function showNotification() {
+    document.getElementById("notify").style.display = "block";
+}
+function closePopup() {
+    document.getElementById("notify").style.display = "none";
+}
+</script>
+</body>
+</html>

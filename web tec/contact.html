@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<style>
+body {
+    font-family: Arial;
+    margin:0;
+    background:#f4f6f8;
+}
+/* Header */
+header {
+    background:#002b5c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* Navigation */
+nav {
+    background:#00509e;
+    padding:10px;
+    text-align:center;
+}
+nav a {
+    color:white;
+
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+/* FORM CONTAINER */
+.container {
+    width:50%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+}
+/* OUTSIDE SECTIONS */
+.section {
+    width:80%;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+/* Inputs */
+input, textarea {
+    width:100%;
+
+    padding:10px;
+    margin:10px 0;
+
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+/* Button */
+button {
+    background:#00509e;
+    color:white;
+    padding:10px;
+    border:none;
+    width:100%;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover {
+    background:#003f7f;
+}
+/* Map */
+iframe {
+    width:100%;
+    height:300px;
+
+    border:0;
+}
+</style>
+<script>
+function sendMessage() {
+    alert("Message Sent Successfully!");
+}
+</script>
+</head>
+<body>
+<header>
+<h1>UCEV Hostel</h1>
+<p>University College of Engineering Villupuram</p>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="foodmenu.html">Food Menu</a>
+<a href="feepayment.html">Fees & Payment</a>
+<a href="student.html">Student Details</a>
+<a href="contact.html">Contact</a>
+<a href="ratings.html">Ratings</a>
+</nav>
+<!-- FORM ONLY -->
+
+<div class="container">
+<h2 style="text-align:center;">Contact Form</h2>
+<form>
+<label>Name</label>
+<input type="text" required>
+<label>Email</label>
+<input type="email" required>
+<label>Message / Complaint</label>
+<textarea rows="5" required></textarea>
+<button type="button" onclick="sendMessage()">Send Message</button>
+</form>
+</div>
+<!-- CONTACT DETAILS OUTSIDE -->
+<div class="section">
+<h3>Hostel Contact Details</h3>
+<p><b>📍 Address:</b> UCEV Hostel, Villupuram, Tamil Nadu</p>
+<p><b>📞 Phone:</b> 9876543210</p>	
+<p><b>📧 Email:</b> ucevhostel@gmail.com</p>
+</div>
+<!-- MAP OUTSIDE -->
+<div class="section">
+<h3>Our Location</h3>
+<iframe 
+
+src="https://www.google.com/maps?q=11.9401,79.4861&output=embed">
+</iframe>
+</div>
+</body>
+</html>
